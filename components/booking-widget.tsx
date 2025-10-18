@@ -126,6 +126,7 @@ export default function BookingWidget() {
                 onClick={decrementGuests}
                 disabled={guests <= 1}
                 className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                suppressHydrationWarning
               >
                 <Minus className="w-5 h-5" />
               </button>
@@ -143,6 +144,7 @@ export default function BookingWidget() {
                 onClick={incrementGuests}
                 disabled={guests >= 10}
                 className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                suppressHydrationWarning
               >
                 <Plus className="w-5 h-5" />
               </button>
@@ -156,6 +158,7 @@ export default function BookingWidget() {
             type="button"
             onClick={handleSubmit}
             className="w-full px-8 py-4 text-lg font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-[1.02]"
+            suppressHydrationWarning
           >
             Check Availability
           </button>

@@ -20,7 +20,7 @@ export default function Navigation() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Rooms", href: "/rooms" },
-    { name: "Dining", href: "/dining" },
+    { name: "Menu", href: "/menu" },
     { name: "Spa", href: "/spa" },
     { name: "Gallery", href: "/gallery" },
     { name: "About", href: "/about" },

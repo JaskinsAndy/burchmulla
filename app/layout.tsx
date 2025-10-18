@@ -18,8 +18,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Burchmulla Resort | Luxury Resort in Uzbekistan",
-  description: "Experience luxury and tranquility at Burchmulla Resort in the heart of Uzbekistan. Discover our world-class accommodations, dining, spa, and more.",
-  keywords: ["resort", "luxury", "uzbekistan", "burchmulla", "hotel", "spa", "dining"],
+  description: "Experience luxury and tranquility at Burchmulla Resort in the heart of Uzbekistan. Discover our world-class accommodations, fine dining menu, spa, and more.",
+  keywords: ["resort", "luxury", "uzbekistan", "burchmulla", "hotel", "spa", "dining", "menu", "restaurant"],
 };
 
 export default function RootLayout({
