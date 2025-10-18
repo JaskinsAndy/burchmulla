@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,20 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleBookNowClick = () => {
+    if (pathname === "/") {
+      // If on home page, scroll to booking widget
+      const bookingWidget = document.getElementById("booking-widget");
+      if (bookingWidget) {
+        bookingWidget.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    } else {
+      // If on another page, navigate to home with hash
+      router.push("/#booking-widget");
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -72,6 +89,7 @@ export default function Navigation() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleBookNowClick}
               className={`ml-4 px-6 py-2.5 text-sm lg:text-base font-semibold rounded-full transition-all duration-200 ${
                 isScrolled
                   ? "bg-gray-900 text-white hover:bg-gray-800"
@@ -117,7 +135,10 @@ export default function Navigation() {
                   {link.name}
                 </Link>
               ))}
-              <button className="w-full mt-4 px-6 py-3 text-base font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors">
+              <button
+                onClick={handleBookNowClick}
+                className="w-full mt-4 px-6 py-3 text-base font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors"
+              >
                 Book Now
               </button>
             </div>

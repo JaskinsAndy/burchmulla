@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Camera, X } from "lucide-react";
 import Image from "next/image";
 
@@ -47,10 +48,15 @@ const galleryImages = [
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const router = useRouter();
 
   const filteredImages = activeCategory === "all"
     ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
+
+  const handleBookingClick = () => {
+    router.push("/#booking-widget");
+  };
 
   return (
     <div className="bg-background">
@@ -227,7 +233,11 @@ export default function GalleryPage() {
             <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
               These images are just a glimpse. Book your stay and create your own memories.
             </p>
-            <button className="px-10 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 shadow-xl hover:scale-105" suppressHydrationWarning>
+            <button
+              onClick={handleBookingClick}
+              className="px-10 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 shadow-xl hover:scale-105"
+              suppressHydrationWarning
+            >
               Book Your Stay
             </button>
           </motion.div>

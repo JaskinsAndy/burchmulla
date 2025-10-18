@@ -1,10 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, Award, Users, Heart, Leaf, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
+  const router = useRouter();
+
+  const handleBookingClick = () => {
+    router.push("/#booking-widget");
+  };
   return (
     <div className="bg-background">
       {/* Hero Section */}
@@ -71,12 +78,40 @@ export default function AboutPage() {
               className="grid grid-cols-2 gap-4"
             >
               <div className="space-y-4">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl" />
-                <div className="h-64 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl" />
+                <div className="h-48 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/leg1.jpg"
+                    alt="Burchmulla Resort Pool View"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="h-64 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/leg2.jpg"
+                    alt="Burchmulla Resort Dining"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <div className="space-y-4 pt-12">
-                <div className="h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl" />
-                <div className="h-48 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl" />
+                <div className="h-64 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/leg3.jpg"
+                    alt="Burchmulla Resort Restaurant"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="h-48 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/leg4.jpg"
+                    alt="Burchmulla Resort Menu"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -303,13 +338,13 @@ export default function AboutPage() {
               Join us for an unforgettable escape where luxury meets nature
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/rooms"
+              <button
+                onClick={handleBookingClick}
                 className="inline-flex items-center justify-center px-10 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all duration-200 shadow-xl hover:scale-105"
               >
                 Book Your Stay
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </button>
               <button className="px-10 py-4 border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition-all duration-200" suppressHydrationWarning>
                 Contact Us
               </button>

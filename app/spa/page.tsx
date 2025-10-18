@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { Waves, Sun, Moon, Users, ShieldCheck, Clock, Droplet, MapPin, Calendar, Info, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -30,6 +31,11 @@ const spaImages = [
 
 export default function SpaPage() {
   const [selectedPool, setSelectedPool] = useState<"summer" | "yearRound">("summer");
+  const router = useRouter();
+
+  const handleBookingClick = () => {
+    router.push("/#booking-widget");
+  };
 
   return (
     <div className="bg-background">
@@ -458,7 +464,11 @@ export default function SpaPage() {
               We appreciate your cooperation and hope you have a wonderful time at Burchmulla Resort&#39;s swimming pools. For questions or assistance, contact our poolside attendants or front desk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all duration-200 shadow-xl hover:scale-105" suppressHydrationWarning>
+              <button
+                onClick={handleBookingClick}
+                className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all duration-200 shadow-xl hover:scale-105"
+                suppressHydrationWarning
+              >
                 Book Your Stay
               </button>
               <Link

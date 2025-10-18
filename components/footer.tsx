@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,25 +19,13 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
+                href="https://www.instagram.com/burchmulla_resorts/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -46,7 +34,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "Rooms", "Dining", "Spa", "Gallery", "About"].map((link) => (
+              {["Home", "Rooms", "Menu", "Spa", "Gallery", "About"].map((link) => (
                 <li key={link}>
                   <Link
                     href={link === "Home" ? "/" : `/${link.toLowerCase()}`}

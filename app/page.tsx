@@ -2,14 +2,21 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles, Utensils, Waves, Mountain, Calendar, ArrowRight } from "lucide-react";
 import BookingWidget from "@/components/booking-widget";
 
 export default function Home() {
+  const scrollToBooking = () => {
+    const bookingWidget = document.getElementById("booking-widget");
+    if (bookingWidget) {
+      bookingWidget.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden min-h-[600px]">
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
@@ -25,7 +32,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,7 +40,7 @@ export default function Home() {
             className="space-y-6"
           >
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 sm:mb-6 tracking-tight px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -41,7 +48,7 @@ export default function Home() {
               Welcome to Paradise
             </motion.h1>
             <motion.p
-              className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -49,7 +56,7 @@ export default function Home() {
               Discover the perfect blend of luxury, tranquility, and Uzbek hospitality
               in the heart of nature
             </motion.p>
-            <div className="pt-8">
+            <div className="pt-8" id="booking-widget">
               <BookingWidget />
             </div>
           </motion.div>
@@ -73,7 +80,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="py-12 sm:py-16 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,15 +89,15 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
               Experience Excellence
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Every detail crafted for your comfort and enjoyment
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               {
                 icon: <Sparkles className="h-10 w-10" />,
@@ -136,19 +143,19 @@ export default function Home() {
       </section>
 
       {/* About Preview Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-primary to-primary/90 text-white">
+      <section className="py-12 sm:py-16 lg:py-32 bg-gradient-to-br from-primary to-primary/90 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6">
                 A Sanctuary in Uzbekistan
               </h2>
-              <p className="text-lg text-white/90 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/90 mb-6 leading-relaxed">
                 Nestled in the breathtaking landscapes of Burchmulla, our resort offers
                 an unparalleled escape from the ordinary. Experience the perfect harmony
                 of traditional Uzbek hospitality and modern luxury.
@@ -175,12 +182,40 @@ export default function Home() {
               className="grid grid-cols-2 gap-4"
             >
               <div className="space-y-4">
-                <div className="h-48 bg-white/20 backdrop-blur-sm rounded-2xl" />
-                <div className="h-64 bg-white/20 backdrop-blur-sm rounded-2xl" />
+                <div className="h-48 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/sanc1.jpg"
+                    alt="Burchmulla Resort Interior"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="h-64 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/sanc2.jpg"
+                    alt="Burchmulla Resort Lounge"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <div className="space-y-4 pt-12">
-                <div className="h-64 bg-white/20 backdrop-blur-sm rounded-2xl" />
-                <div className="h-48 bg-white/20 backdrop-blur-sm rounded-2xl" />
+                <div className="h-64 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/sanc3.jpeg"
+                    alt="Burchmulla Resort Pool"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="h-48 relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Some photos/sanc4.jpg"
+                    alt="Burchmulla Resort Grounds"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -188,7 +223,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="py-12 sm:py-16 lg:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -196,21 +231,22 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Calendar className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+            <Calendar className="h-12 sm:h-16 w-12 sm:w-16 text-primary mx-auto mb-6" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
               Begin Your Journey
             </h2>
-            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
               Book your stay today and discover why Burchmulla Resort is Uzbekistan&#39;s
               premier destination for luxury and relaxation.
             </p>
-            <Link
-              href="/rooms"
+            <button
+              onClick={scrollToBooking}
               className="inline-flex items-center px-10 py-4 text-lg font-semibold rounded-full bg-primary text-white hover:bg-primary/90 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+              suppressHydrationWarning
             >
               Check Availability
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </button>
           </motion.div>
         </div>
       </section>

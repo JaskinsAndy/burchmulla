@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { Bed, Users, Maximize, Wifi, Coffee, Wind, Tv, Bath, Star, ArrowRight, Flame, Utensils } from "lucide-react";
 import Link from "next/link";
 import ImageCarousel from "@/components/image-carousel";
@@ -18,6 +19,12 @@ const mountainChalletImages = [
 ];
 
 export default function RoomsPage() {
+  const router = useRouter();
+
+  const handleBookingClick = () => {
+    router.push("/#booking-widget");
+  };
+
   return (
     <div className="bg-background">
       {/* Hero Section */}
@@ -181,7 +188,11 @@ export default function RoomsPage() {
               Book your stay at our Mountain Challet and immerse yourself in nature&#39;s beauty
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 shadow-xl hover:scale-105" suppressHydrationWarning>
+              <button
+                onClick={handleBookingClick}
+                className="px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 shadow-xl hover:scale-105"
+                suppressHydrationWarning
+              >
                 Check Availability
               </button>
               <Link

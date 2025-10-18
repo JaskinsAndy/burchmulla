@@ -944,8 +944,8 @@ export default function MenuPage() {
       </section>
 
       {/* Search & Filter Section */}
-      <section className="sticky top-16 z-40 bg-white border-b border-border shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <section className="sticky top-16 sm:top-20 lg:top-24 z-40 bg-white border-b border-border shadow-sm">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search Bar */}
             <div className="relative w-full lg:w-96">
@@ -960,29 +960,30 @@ export default function MenuPage() {
             </div>
 
             {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2 items-center">
+            <div className="flex flex-wrap gap-2 items-center w-full lg:w-auto justify-center lg:justify-start">
               <button
                 onClick={() => setShowBestSellers(!showBestSellers)}
-                className={`px-4 py-2 rounded-full font-medium transition-all ${
+                className={`px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all min-h-[44px] ${
                   showBestSellers
                     ? "bg-primary text-white"
                     : "bg-muted text-gray-700 hover:bg-gray-200"
                 }`}
               >
-                <span className="flex items-center space-x-2">
+                <span className="flex items-center space-x-1 sm:space-x-2">
                   <Star className="h-4 w-4" />
-                  <span>Best Sellers</span>
+                  <span className="hidden sm:inline">Best Sellers</span>
+                  <span className="sm:hidden">Best</span>
                 </span>
               </button>
               <button
                 onClick={() => setShowNew(!showNew)}
-                className={`px-4 py-2 rounded-full font-medium transition-all ${
+                className={`px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all min-h-[44px] ${
                   showNew
                     ? "bg-primary text-white"
                     : "bg-muted text-gray-700 hover:bg-gray-200"
                 }`}
               >
-                <span className="flex items-center space-x-2">
+                <span className="flex items-center space-x-1 sm:space-x-2">
                   <Sparkles className="h-4 w-4" />
                   <span>New</span>
                 </span>
@@ -990,19 +991,21 @@ export default function MenuPage() {
               {selectedCategory && (
                 <button
                   onClick={() => setSelectedCategory(null)}
-                  className="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium transition-all"
+                  className="px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium transition-all min-h-[44px]"
                 >
-                  Clear Category
+                  <span className="hidden sm:inline">Clear Category</span>
+                  <span className="sm:hidden">Clear</span>
                 </button>
               )}
               <a
                 href="/Menu/burchmenu.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-full bg-primary text-white hover:bg-primary/90 font-medium transition-all flex items-center space-x-2"
+                className="px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base bg-primary text-white hover:bg-primary/90 font-medium transition-all flex items-center space-x-1 sm:space-x-2 min-h-[44px]"
               >
                 <FileText className="h-4 w-4" />
-                <span>PDF Menu</span>
+                <span className="hidden sm:inline">PDF Menu</span>
+                <span className="sm:hidden">PDF</span>
               </a>
             </div>
           </div>

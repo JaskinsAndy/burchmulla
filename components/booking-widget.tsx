@@ -78,7 +78,7 @@ export default function BookingWidget() {
       <div
         role="form"
         onKeyDown={handleKeyDown}
-        className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-6 shadow-2xl"
+        className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Arrival Date */}
@@ -153,11 +153,11 @@ export default function BookingWidget() {
         </div>
 
         {/* Submit Button */}
-        <div className="mt-6">
+        <div className="mt-4 sm:mt-6">
           <button
             type="button"
             onClick={handleSubmit}
-            className="w-full px-8 py-4 text-lg font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-[1.02]"
+            className="w-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-95 min-h-[48px]"
             suppressHydrationWarning
           >
             Check Availability
