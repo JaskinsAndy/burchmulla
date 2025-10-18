@@ -184,7 +184,7 @@ export default function AboutPage() {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Located in the picturesque Burchmulla district of the Tashkent Region, our resort
                 offers easy access while maintaining the tranquility of a remote mountain retreat.
-                Just a scenic drive from Tashkent, you&apos;ll discover a world away from the everyday.
+                Just a scenic drive from Tashkent, you&rsquo;ll discover a world away from the everyday.
               </p>
 
               <div className="space-y-4 mb-8">
