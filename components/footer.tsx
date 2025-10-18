@@ -71,24 +71,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-center">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Burchmulla Resort. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <Link
-                href="/privacy"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>
