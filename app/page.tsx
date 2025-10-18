@@ -201,7 +201,7 @@ export default function Home() {
               Begin Your Journey
             </h2>
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-              Book your stay today and discover why Burchmulla Resort is Uzbekistan&apos;s
+              Book your stay today and discover why Burchmulla Resort is Uzbekistan&#39;s
               premier destination for luxury and relaxation.
             </p>
             <Link
