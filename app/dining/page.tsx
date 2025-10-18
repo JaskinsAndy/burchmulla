@@ -49,7 +49,7 @@ export default function DiningPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-          <div className="absolute inset-0 bg-[url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070")] bg-cover bg-center opacity-30" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070')] bg-cover bg-center opacity-30" />
         </div>
         <div className="relative z-10 text-center px-4">
           <motion.h1
