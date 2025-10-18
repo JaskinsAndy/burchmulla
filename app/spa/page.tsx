@@ -254,7 +254,7 @@ export default function SpaPage() {
                 rules: [
                   "Children under 12 must be accompanied by an adult",
                   "Lifeguards on duty during operating hours",
-                  "Parents responsible for children&rsquo;s safety"
+                  "Parents responsible for children&#39;s safety"
                 ]
               },
               {
@@ -280,7 +280,7 @@ export default function SpaPage() {
                 title: "Behavior",
                 rules: [
                   "No running, diving, or rough play",
-                  "Respect other guests&rsquo; privacy",
+                  "Respect other guests&#39; privacy",
                   "Maintain a quiet environment"
                 ]
               },
@@ -455,7 +455,7 @@ export default function SpaPage() {
               Ready to Relax?
             </h2>
             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-              We appreciate your cooperation and hope you have a wonderful time at Burchmulla Resort&rsquo;s swimming pools. For questions or assistance, contact our poolside attendants or front desk.
+              We appreciate your cooperation and hope you have a wonderful time at Burchmulla Resort&#39;s swimming pools. For questions or assistance, contact our poolside attendants or front desk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all duration-200 shadow-xl hover:scale-105" suppressHydrationWarning>
