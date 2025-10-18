@@ -156,7 +156,11 @@ export default function RoomsPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all duration-200 shadow-xl hover:scale-105" suppressHydrationWarning>
+                <button
+                  onClick={handleBookingClick}
+                  className="flex-1 flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all duration-200 shadow-xl hover:scale-105"
+                  suppressHydrationWarning
+                >
                   <span>Book This Challet</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>
