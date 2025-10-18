@@ -15,16 +15,16 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[50vh] h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070')] bg-cover bg-center opacity-30" />
         </div>
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-3 sm:px-4">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white mb-4 sm:mb-6 leading-tight"
           >
             Our Story
           </motion.h1>
@@ -32,7 +32,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
           >
             Where tradition meets luxury in the heart of Uzbekistan
           </motion.p>

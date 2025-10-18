@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden min-h-[600px]">
+      <section className="relative min-h-[100svh] h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
@@ -32,15 +32,15 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+        <div className="relative z-10 text-center px-3 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full py-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 sm:mb-6 tracking-tight px-2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white mb-3 sm:mb-4 md:mb-6 tracking-tight leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -48,7 +48,7 @@ export default function Home() {
               Welcome to Paradise
             </motion.h1>
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-2"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-1 sm:px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -56,7 +56,7 @@ export default function Home() {
               Discover the perfect blend of luxury, tranquility, and Uzbek hospitality
               in the heart of nature
             </motion.p>
-            <div className="pt-8" id="booking-widget">
+            <div className="pt-4 sm:pt-6 md:pt-8" id="booking-widget">
               <BookingWidget />
             </div>
           </motion.div>
@@ -64,7 +64,7 @@ export default function Home() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
