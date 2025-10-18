@@ -91,7 +91,7 @@ export default function BookingWidget() {
               type="date"
               value={arrivalDate}
               onChange={(e) => setArrivalDate(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-white/90 backdrop-blur-sm border border-white/30 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white transition-all [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100"
               required
               suppressHydrationWarning
             />
@@ -108,7 +108,7 @@ export default function BookingWidget() {
               value={departureDate}
               onChange={(e) => setDepartureDate(e.target.value)}
               min={arrivalDate}
-              className="w-full px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-white/90 backdrop-blur-sm border border-white/30 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white transition-all [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100"
               required
               suppressHydrationWarning
             />
@@ -125,7 +125,7 @@ export default function BookingWidget() {
                 type="button"
                 onClick={decrementGuests}
                 disabled={guests <= 1}
-                className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm border border-white/30 text-gray-900 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 suppressHydrationWarning
               >
                 <Minus className="w-5 h-5" />
@@ -136,14 +136,14 @@ export default function BookingWidget() {
                 onChange={handleGuestChange}
                 min="1"
                 max="10"
-                className="flex-1 text-center px-4 py-3 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold focus:outline-none focus:ring-2 focus:ring-white/50 transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                className="flex-1 text-center px-4 py-3 rounded-xl bg-white/90 backdrop-blur-sm border border-white/30 text-gray-900 font-semibold focus:outline-none focus:ring-2 focus:ring-white focus:bg-white transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 suppressHydrationWarning
               />
               <button
                 type="button"
                 onClick={incrementGuests}
                 disabled={guests >= 10}
-                className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm border border-white/30 text-gray-900 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 suppressHydrationWarning
               >
                 <Plus className="w-5 h-5" />
