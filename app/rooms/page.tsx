@@ -178,7 +178,7 @@ export default function RoomsPage() {
               Ready to Experience Mountain Serenity?
             </h2>
             <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-              Book your stay at our Mountain Challet and immerse yourself in nature&#39;s beauty
+              Book your stay at our Mountain Challet and immerse yourself in nature&apos;s beauty
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 shadow-xl hover:scale-105" suppressHydrationWarning>
